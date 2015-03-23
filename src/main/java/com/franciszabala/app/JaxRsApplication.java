@@ -45,6 +45,8 @@ import java.util.Set;
 
 import javax.ws.rs.core.Application;
 
+import org.glassfish.jersey.jackson.JacksonFeature;
+
 import com.franciszabala.resource.HelloWorldResource;
 import com.franciszabala.resource.PersonResource;
 import com.franciszabala.resource.SimpleWebResource;
@@ -61,8 +63,10 @@ public class JaxRsApplication extends Application {
         HashSet<Class<?>> c = new HashSet<Class<?>>();
         c.add(HelloWorldResource.class);
         c.add(SimpleWebResource.class);
+      //SEVERE: MessageBodyWriter not found for media type=text/plain, type=class com.franciszabala.model.Person, genericType=class com.franciszabala.model.Person.
         c.add(PersonResource.class);
-        //SEVERE: MessageBodyWriter not found for media type=text/plain, type=class com.franciszabala.model.Person, genericType=class com.franciszabala.model.Person.
+        
+        
         classes = Collections.unmodifiableSet(c);
     }
 
