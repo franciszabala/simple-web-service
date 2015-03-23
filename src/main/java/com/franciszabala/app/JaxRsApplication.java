@@ -46,6 +46,8 @@ import java.util.Set;
 import javax.ws.rs.core.Application;
 
 import com.franciszabala.resource.HelloWorldResource;
+import com.franciszabala.resource.PersonResource;
+import com.franciszabala.resource.SimpleWebResource;
 
 /**
  * JAX-RS Application class for this example.
@@ -58,6 +60,9 @@ public class JaxRsApplication extends Application {
     public JaxRsApplication() {
         HashSet<Class<?>> c = new HashSet<Class<?>>();
         c.add(HelloWorldResource.class);
+        c.add(SimpleWebResource.class);
+        c.add(PersonResource.class);
+        //SEVERE: MessageBodyWriter not found for media type=text/plain, type=class com.franciszabala.model.Person, genericType=class com.franciszabala.model.Person.
         classes = Collections.unmodifiableSet(c);
     }
 
